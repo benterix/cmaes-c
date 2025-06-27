@@ -1,19 +1,11 @@
 # C CMA-ES Optimizer with IPOP Restarts
 
-A C implementation of the Covariance Matrix Adaptation Evolution Strategy (CMA-ES) optimization algorithm, featuring an Incremental Population Size (IPOP) restart strategy. This library uses the GNU Scientific Library (GSL) for numerical operations.
-
-## Features
-
-* Standard CMA-ES algorithm implementation.
-* IPOP-CMA-ES restart strategy for enhanced global search capabilities.
-* Dependency on GSL for robust linear algebra and random number generation.
-* Configurable parameters (population size, termination criteria, etc.).
-* Example benchmark program included (`main_benchmark.c`).
+This is a very basic implementation of the CMA-ES algorithm with IPOP using GSL for math operations.
 
 ## Prerequisites
 
-* A C Compiler: Such as GCC (`gcc`) or Clang (`clang`).
-* GNU Scientific Library (GSL): The library relies heavily on GSL. You need the GSL development files installed (apt-get install libgsl-dev on Debian/Ubuntu, sudo dnf install gsl-devel Fedora/CentOS/RHEL, brew install gsl for macOS, or install from source - [GSL website](https://www.gnu.org/software/gsl/)).
+* C Compiler
+* GNU Scientific Library (GSL): you need the GSL development files installed (apt-get install libgsl-dev on Debian/Ubuntu, sudo dnf install gsl-devel Fedora/CentOS/RHEL, brew install gsl for macOS, or install from source - [GSL website](https://www.gnu.org/software/gsl/)).
 
 ## Building
 
@@ -38,7 +30,7 @@ Jsut clone the repository and compile using Make.
 
 ### 2. Using the Optimizer (`optimizer.h`):
 
-The easiest way to use the library is via the IPOP-CMA-ES interface provided by `optimizer.h`.
+This might be the easiest way to use the library - via the IPOP-CMA-ES interface provided by `optimizer.h`:
 
 ```c
 #include "optimizer.h"
@@ -79,7 +71,7 @@ int main() {
 
 ### 3. Using CMA-ES Directly (`cmaes.h`):
 
-You can also use the core CMA-ES functions directly if you don't need the IPOP restart strategy. See `cmaes.h` for function documentation and `optimizer.c` for example usage patterns.
+You can also use the core CMA-ES functions directly if you don't need the IPOP restart strategy but the results will be worse. See `cmaes.h` for function documentation and `optimizer.c` for example usage patterns.
 
 ## Example Program
 
